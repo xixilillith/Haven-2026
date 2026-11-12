@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://b7nti4kfsrbfy"]
+
+[ext_resource type="Texture2D" uid="uid://b1mmupympr80v" path="res://art/full tilemap.png" id="1_80nbo"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_80nbo"]
+texture = ExtResource("1_80nbo")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+8:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+8:3/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+5:7/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_bk321"]
+sources/0 = SubResource("TileSetAtlasSource_80nbo")
+
+[node name="Game" type="Node2D" unique_id=1181536580]
+
+[node name="Floor" type="TileMapLayer" parent="." unique_id=1019448144]
+position = Vector2(-1, 2)
+enabled = false
+tile_set = SubResource("TileSet_bk321")
+
+[node name="Walls" type="TileMapLayer" parent="." unique_id=1715832695]
+
+[node name="Decorations" type="TileMapLayer" parent="." unique_id=911788032]
+
+[node name="Entrance" type="Node2D" parent="." unique_id=1296155699]
+
+[node name="Exit" type="Node2D" parent="." unique_id=620784667]
