@@ -205,7 +205,7 @@ size = Vector2(16, 48)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fwdpv"]
 size = Vector2(32, 32)
 
-[node name="template" type="Node2D" unique_id=1778822521]
+[node name="room1" type="Node2D" unique_id=1778822521]
 
 [node name="floor" type="TileMapLayer" parent="." unique_id=27535520]
 position = Vector2(1, 0)
