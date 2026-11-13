@@ -1,11 +1,11 @@
 [gd_scene format=4 uid="uid://dfy4fq6wjnhga"]
 
-[ext_resource type="Texture2D" uid="uid://b1mmupympr80v" path="res://Room_Scenes/Tileset/full tilemap.png" id="1_2w4ou"]
-[ext_resource type="PackedScene" uid="uid://dthkdqfky58a5" path="res://Room_Scenes/Room_Assets/Door.tscn" id="2_efext"]
-[ext_resource type="PackedScene" uid="uid://ccrci862yt4h" path="res://Entities/Player/player.tscn" id="3_b87dh"]
+[ext_resource type="Texture2D" uid="uid://b1mmupympr80v" path="res://Room_Scenes/Room_Assets/Art/full tilemap.png" id="1_bdlus"]
+[ext_resource type="PackedScene" uid="uid://dthkdqfky58a5" path="res://Room_Scenes/Room_Assets/Door.tscn" id="2_puwgn"]
+[ext_resource type="PackedScene" uid="uid://ccrci862yt4h" path="res://Entities/Player/player.tscn" id="3_p2uj6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k7ty0"]
-texture = ExtResource("1_2w4ou")
+texture = ExtResource("1_bdlus")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -65,7 +65,7 @@ texture = ExtResource("1_2w4ou")
 sources/0 = SubResource("TileSetAtlasSource_k7ty0")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3sh0p"]
-texture = ExtResource("1_2w4ou")
+texture = ExtResource("1_bdlus")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -142,7 +142,7 @@ size = Vector2(15.5, 241)
 size = Vector2(160, 80)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pmp2w"]
-texture = ExtResource("1_2w4ou")
+texture = ExtResource("1_bdlus")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -282,7 +282,7 @@ shape = SubResource("RectangleShape2D_fwdpv")
 position = Vector2(417, 64)
 shape = SubResource("RectangleShape2D_fwdpv")
 
-[node name="Door_Top" parent="." unique_id=1558662530 instance=ExtResource("2_efext")]
+[node name="Door_Top" parent="." unique_id=1558662530 instance=ExtResource("2_puwgn")]
 position = Vector2(248, 8)
 target_room = "uid://bn21k1f2m3wtj"
 target_door_name = "Door_Bottom"
@@ -293,10 +293,10 @@ position = Vector2(0, 1)
 [node name="Spawn" parent="Door_Top" index="1" unique_id=229343840]
 position = Vector2(-2, 18)
 
-[node name="Door_Bottom" parent="." unique_id=2022524789 instance=ExtResource("2_efext")]
+[node name="Door_Bottom" parent="." unique_id=2022524789 instance=ExtResource("2_puwgn")]
 position = Vector2(248, 8)
 target_room = "uid://bn21k1f2m3wtj"
-target_door_name = "Door_Bottom"
+target_door_name = "Door_Top"
 
 [node name="CollisionShape2D" parent="Door_Bottom" index="0" unique_id=1635723428]
 position = Vector2(0, 255)
@@ -304,7 +304,7 @@ position = Vector2(0, 255)
 [node name="Spawn" parent="Door_Bottom" index="1" unique_id=229343840]
 position = Vector2(0, 236)
 
-[node name="CharacterBody2D" parent="." unique_id=1257237480 instance=ExtResource("3_b87dh")]
+[node name="CharacterBody2D" parent="." unique_id=1257237480 instance=ExtResource("3_p2uj6")]
 position = Vector2(132, 97)
 
 [editable path="Door_Top"]
