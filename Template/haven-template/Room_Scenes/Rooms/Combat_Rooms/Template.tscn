@@ -1,13 +1,13 @@
 [gd_scene format=4 uid="uid://qc5alfxaw77y"]
 
-[ext_resource type="Texture2D" uid="uid://b1mmupympr80v" path="res://Room_Scenes/Tileset/full tilemap.png" id="1_g3r2e"]
-[ext_resource type="PackedScene" uid="uid://dvcjd0kkxgsrg" path="res://Room_Scenes/playerforooms/player.tscn" id="1_gb64d"]
-[ext_resource type="PackedScene" uid="uid://mcpy6npthod1" path="res://Room_Scenes/Combatrooms/walls.tscn" id="2_x4kgp"]
+[ext_resource type="PackedScene" uid="uid://mcpy6npthod1" path="res://Room_Scenes/Rooms/Combat_Rooms/Walls.tscn" id="1_a16q2"]
+[ext_resource type="Texture2D" uid="uid://b1mmupympr80v" path="res://Room_Scenes/Tileset/full tilemap.png" id="2_m0ivs"]
+[ext_resource type="PackedScene" path="res://Room_Scenes/playerforooms/player.tscn" id="3_ts7pu"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_c5spw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x4kgp"]
-texture = ExtResource("1_g3r2e")
+texture = ExtResource("2_m0ivs")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -74,7 +74,7 @@ sources/0 = SubResource("TileSetAtlasSource_x4kgp")
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_x4kgp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k7ty0"]
-texture = ExtResource("1_g3r2e")
+texture = ExtResource("2_m0ivs")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -137,7 +137,7 @@ sources/0 = SubResource("TileSetAtlasSource_k7ty0")
 
 [node name="template" type="Node2D" unique_id=1778822521]
 
-[node name="walls" parent="." unique_id=704517355 instance=ExtResource("2_x4kgp")]
+[node name="walls" parent="." unique_id=704517355 instance=ExtResource("1_a16q2")]
 tile_set = SubResource("TileSet_c27a7")
 
 [node name="floor" type="TileMapLayer" parent="." unique_id=27535520]
@@ -146,5 +146,5 @@ tile_set = SubResource("TileSet_2dnwx")
 
 [node name="decorations" type="TileMapLayer" parent="." unique_id=450606274]
 
-[node name="CharacterBody2D" parent="." unique_id=1257237480 instance=ExtResource("1_gb64d")]
+[node name="CharacterBody2D" parent="." unique_id=1257237480 instance=ExtResource("3_ts7pu")]
 position = Vector2(186, 114)

@@ -1,14 +1,13 @@
 [gd_scene format=4 uid="uid://bn21k1f2m3wtj"]
 
-[ext_resource type="Texture2D" uid="uid://b1mmupympr80v" path="res://Room_Scenes/Tileset/full tilemap.png" id="1_k8ysm"]
-[ext_resource type="PackedScene" uid="uid://dthkdqfky58a5" path="res://Room_Scenes/door.tscn" id="1_xvlnc"]
-[ext_resource type="PackedScene" uid="uid://mcpy6npthod1" path="res://Room_Scenes/Combatrooms/walls.tscn" id="2_lj2tb"]
-[ext_resource type="PackedScene" uid="uid://dvcjd0kkxgsrg" path="res://Room_Scenes/playerforooms/player.tscn" id="3_jk2qp"]
+[ext_resource type="PackedScene" uid="uid://dthkdqfky58a5" path="res://Room_Scenes/Room_Assets/Door.tscn" id="1_x37al"]
+[ext_resource type="PackedScene" path="res://Room_Scenes/Combatrooms/walls.tscn" id="2_ecuxf"]
+[ext_resource type="Texture2D" uid="uid://b1mmupympr80v" path="res://Room_Scenes/Tileset/full tilemap.png" id="3_btg5p"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_c5spw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x4kgp"]
-texture = ExtResource("1_k8ysm")
+texture = ExtResource("3_btg5p")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -75,7 +74,7 @@ sources/0 = SubResource("TileSetAtlasSource_x4kgp")
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_x4kgp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k7ty0"]
-texture = ExtResource("1_k8ysm")
+texture = ExtResource("3_btg5p")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -138,7 +137,7 @@ sources/0 = SubResource("TileSetAtlasSource_k7ty0")
 
 [node name="room2" type="Node2D" unique_id=1778822521]
 
-[node name="door_right" parent="." unique_id=1558662530 instance=ExtResource("1_xvlnc")]
+[node name="door_right" parent="." unique_id=1558662530 instance=ExtResource("1_x37al")]
 position = Vector2(248, 254)
 target_room = "uid://dfy4fq6wjnhga"
 target_door_name = "door_left"
@@ -149,7 +148,7 @@ position = Vector2(1, 9)
 [node name="Spawn" parent="door_right" index="1" unique_id=229343840]
 position = Vector2(0, -8)
 
-[node name="walls" parent="." unique_id=704517355 instance=ExtResource("2_lj2tb")]
+[node name="walls" parent="." unique_id=704517355 instance=ExtResource("2_ecuxf")]
 tile_map_data = PackedByteArray("AAAAAAAAAAAHAAQAAAAAAAEAAAAHAAQAAAAAAAIAAAAHAAQAAAAAAAMAAAAHAAQAAAAAAAQAAAAHAAQAAAAAAAUAAAAHAAQAAAAAAAYAAAAHAAQAAAAAAAcAAAAHAAQAAAAAAAgAAAAHAAQAAAAAAAkAAAAHAAQAAAAAAAoAAAAHAAQAAAAAAAsAAAAHAAQAAAAAAAwAAAAHAAQAAAAAAA0AAAAHAAQAAAAAAA4AAAAHAAQAAAAAAA8AAAAHAAQAAAAAABAAAAAHAAQAAAABABAAAAAHAAQAAAACABAAAAAHAAQAAAADABAAAAAHAAQAAAAEABAAAAAHAAQAAAAFABAAAAAHAAQAAAAGABAAAAAHAAQAAAAHABAAAAAHAAQAAAAIABAAAAAHAAQAAAAJABAAAAAHAAQAAAAKABAAAAAHAAQAAAALABAAAAAHAAQAAAAMABAAAAAHAAQAAAANABAAAAAHAAQAAAAOABAAAAAHAAQAAAAQABAAAAAHAAQAAAATABAAAAAHAAQAAAAUABAAAAAHAAQAAAAVABAAAAAHAAQAAAAWABAAAAAHAAQAAAAXABAAAAAHAAQAAAAYABAAAAAHAAQAAAAZABAAAAAHAAQAAAAaABAAAAAHAAQAAAAbABAAAAAHAAQAAAAcABAAAAAHAAQAAAAdABAAAAAHAAQAAAAdAAAAAAAHAAQAAAAdAAEAAAAHAAQAAAAdAAIAAAAHAAQAAAAdAAMAAAAHAAQAAAAdAAQAAAAHAAQAAAAdAAUAAAAHAAQAAAAdAAYAAAAHAAQAAAAdAAcAAAAHAAQAAAAdAAgAAAAHAAQAAAAdAAkAAAAHAAQAAAAdAAoAAAAHAAQAAAAdAAsAAAAHAAQAAAAdAAwAAAAHAAQAAAAdAA0AAAAHAAQAAAAdAA4AAAAHAAQAAAAdAA8AAAAHAAQAAAABAAAAAAAHAAQAAAACAAAAAAAHAAQAAAADAAAAAAAHAAQAAAAEAAAAAAAHAAQAAAAFAAAAAAAHAAQAAAAGAAAAAAAHAAQAAAAHAAAAAAAHAAQAAAAIAAAAAAAHAAQAAAAJAAAAAAAHAAQAAAAKAAAAAAAHAAQAAAALAAAAAAAHAAQAAAAMAAAAAAAHAAQAAAANAAAAAAAHAAQAAAAOAAAAAAAHAAQAAAAPAAAAAAAHAAQAAAAQAAAAAAAHAAQAAAARAAAAAAAHAAQAAAASAAAAAAAHAAQAAAATAAAAAAAHAAQAAAAUAAAAAAAHAAQAAAAVAAAAAAAHAAQAAAAWAAAAAAAHAAQAAAAXAAAAAAAHAAQAAAAYAAAAAAAHAAQAAAAZAAAAAAAHAAQAAAAaAAAAAAAHAAQAAAAbAAAAAAAHAAQAAAAcAAAAAAAHAAQAAAASABAAAAAGAAQAAAARABAAAAAGAAQAAAA=")
 tile_set = SubResource("TileSet_c27a7")
 
@@ -159,9 +158,6 @@ tile_map_data = PackedByteArray("AAABAAEAAAADAAEAAAABAAIAAAADAAEAAAABAAMAAAADAAE
 tile_set = SubResource("TileSet_2dnwx")
 
 [node name="decorations" type="TileMapLayer" parent="." unique_id=450606274]
-
-[node name="CharacterBody2D" parent="." unique_id=1257237480 instance=ExtResource("3_jk2qp")]
-position = Vector2(249, 243)
 
 [editable path="door_right"]
 [editable path="walls"]

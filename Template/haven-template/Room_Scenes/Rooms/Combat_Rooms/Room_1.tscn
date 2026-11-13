@@ -1,11 +1,10 @@
 [gd_scene format=4 uid="uid://dfy4fq6wjnhga"]
 
-[ext_resource type="Texture2D" uid="uid://b1mmupympr80v" path="res://Room_Scenes/Tileset/full tilemap.png" id="1_pmp2w"]
-[ext_resource type="PackedScene" uid="uid://dthkdqfky58a5" path="res://Room_Scenes/door.tscn" id="2_3fkoi"]
-[ext_resource type="PackedScene" uid="uid://dvcjd0kkxgsrg" path="res://Room_Scenes/playerforooms/player.tscn" id="3_prkob"]
+[ext_resource type="Texture2D" uid="uid://b1mmupympr80v" path="res://Room_Scenes/Tileset/full tilemap.png" id="1_2w4ou"]
+[ext_resource type="PackedScene" uid="uid://dthkdqfky58a5" path="res://Room_Scenes/Room_Assets/Door.tscn" id="2_efext"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k7ty0"]
-texture = ExtResource("1_pmp2w")
+texture = ExtResource("1_2w4ou")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -65,7 +64,7 @@ texture = ExtResource("1_pmp2w")
 sources/0 = SubResource("TileSetAtlasSource_k7ty0")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3sh0p"]
-texture = ExtResource("1_pmp2w")
+texture = ExtResource("1_2w4ou")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -142,7 +141,7 @@ size = Vector2(15.5, 241)
 size = Vector2(160, 80)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pmp2w"]
-texture = ExtResource("1_pmp2w")
+texture = ExtResource("1_2w4ou")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -274,7 +273,7 @@ shape = SubResource("RectangleShape2D_fwdpv")
 position = Vector2(417, 64)
 shape = SubResource("RectangleShape2D_fwdpv")
 
-[node name="left_door" parent="." unique_id=1558662530 instance=ExtResource("2_3fkoi")]
+[node name="left_door" parent="." unique_id=1558662530 instance=ExtResource("2_efext")]
 position = Vector2(248, 8)
 target_room = "uid://bn21k1f2m3wtj"
 target_door_name = "right_door"
@@ -284,8 +283,5 @@ position = Vector2(0, 1)
 
 [node name="Spawn" parent="left_door" index="1" unique_id=229343840]
 position = Vector2(0, 9)
-
-[node name="CharacterBody2D" parent="left_door" unique_id=1257237480 instance=ExtResource("3_prkob")]
-position = Vector2(-1, 21)
 
 [editable path="left_door"]
