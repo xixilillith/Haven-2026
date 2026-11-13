@@ -1,14 +1,14 @@
 [gd_scene format=4 uid="uid://bn21k1f2m3wtj"]
 
-[ext_resource type="PackedScene" uid="uid://dthkdqfky58a5" path="res://Room_Scenes/Room_Assets/Door.tscn" id="1_x37al"]
-[ext_resource type="Texture2D" uid="uid://b1mmupympr80v" path="res://Room_Scenes/Tileset/full tilemap.png" id="3_btg5p"]
-[ext_resource type="PackedScene" uid="uid://mcpy6npthod1" path="res://Room_Scenes/Room_Assets/Walls.tscn" id="3_e4arf"]
-[ext_resource type="PackedScene" uid="uid://ccrci862yt4h" path="res://Entities/Player/player.tscn" id="4_pxqg0"]
+[ext_resource type="PackedScene" uid="uid://dthkdqfky58a5" path="res://Room_Scenes/Room_Assets/Door.tscn" id="1_elw66"]
+[ext_resource type="Texture2D" uid="uid://b1mmupympr80v" path="res://Room_Scenes/Tileset/full tilemap.png" id="2_onofi"]
+[ext_resource type="PackedScene" uid="uid://mcpy6npthod1" path="res://Room_Scenes/Room_Assets/Walls.tscn" id="3_abdys"]
+[ext_resource type="PackedScene" uid="uid://ccrci862yt4h" path="res://Entities/Player/player.tscn" id="4_mtqvw"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_x4kgp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k7ty0"]
-texture = ExtResource("3_btg5p")
+texture = ExtResource("2_onofi")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -72,7 +72,7 @@ sources/0 = SubResource("TileSetAtlasSource_k7ty0")
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_c5spw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pxqg0"]
-texture = ExtResource("3_btg5p")
+texture = ExtResource("2_onofi")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -138,16 +138,27 @@ sources/0 = SubResource("TileSetAtlasSource_pxqg0")
 
 [node name="room2" type="Node2D" unique_id=1778822521]
 
-[node name="door_right" parent="." unique_id=1558662530 instance=ExtResource("1_x37al")]
+[node name="Door_Bottom" parent="." unique_id=1558662530 instance=ExtResource("1_elw66")]
 position = Vector2(248, 254)
 target_room = "uid://dfy4fq6wjnhga"
-target_door_name = "door_left"
+target_door_name = "Door_Top"
 
-[node name="CollisionShape2D" parent="door_right" index="0" unique_id=1635723428]
-position = Vector2(1, 9)
+[node name="CollisionShape2D" parent="Door_Bottom" index="0" unique_id=1635723428]
+position = Vector2(-2, 9)
 
-[node name="Spawn" parent="door_right" index="1" unique_id=229343840]
-position = Vector2(0, -8)
+[node name="Spawn" parent="Door_Bottom" index="1" unique_id=229343840]
+position = Vector2(-2, -12)
+
+[node name="Door_Top" parent="." unique_id=830558860 instance=ExtResource("1_elw66")]
+position = Vector2(248, 254)
+target_room = "uid://dfy4fq6wjnhga"
+target_door_name = "Door_Bottom"
+
+[node name="CollisionShape2D" parent="Door_Top" index="0" unique_id=1635723428]
+position = Vector2(-2, -245)
+
+[node name="Spawn" parent="Door_Top" index="1" unique_id=229343840]
+position = Vector2(-2, -229)
 
 [node name="floor" type="TileMapLayer" parent="." unique_id=27535520]
 position = Vector2(-1, 1)
@@ -156,11 +167,13 @@ tile_set = SubResource("TileSet_2dnwx")
 
 [node name="decorations" type="TileMapLayer" parent="." unique_id=450606274]
 
-[node name="walls" parent="." unique_id=704517355 instance=ExtResource("3_e4arf")]
-tile_map_data = PackedByteArray("AAAAAAAAAAAHAAQAAAAAAAEAAAAHAAQAAAAAAAIAAAAHAAQAAAAAAAMAAAAHAAQAAAAAAAQAAAAHAAQAAAAAAAUAAAAHAAQAAAAAAAYAAAAHAAQAAAAAAAcAAAAHAAQAAAAAAAgAAAAHAAQAAAAAAAkAAAAHAAQAAAAAAAoAAAAHAAQAAAAAAAsAAAAHAAQAAAAAAAwAAAAHAAQAAAAAAA0AAAAHAAQAAAAAAA4AAAAHAAQAAAAAAA8AAAAHAAQAAAAAABAAAAAHAAQAAAABABAAAAAHAAQAAAACABAAAAAHAAQAAAADABAAAAAHAAQAAAAEABAAAAAHAAQAAAAFABAAAAAHAAQAAAAGABAAAAAHAAQAAAAHABAAAAAHAAQAAAAIABAAAAAHAAQAAAAJABAAAAAHAAQAAAAKABAAAAAHAAQAAAALABAAAAAHAAQAAAAMABAAAAAHAAQAAAANABAAAAAHAAQAAAAOABAAAAAHAAQAAAAQABAAAAAHAAQAAAATABAAAAAHAAQAAAAUABAAAAAHAAQAAAAVABAAAAAHAAQAAAAWABAAAAAHAAQAAAAXABAAAAAHAAQAAAAYABAAAAAHAAQAAAAZABAAAAAHAAQAAAAaABAAAAAHAAQAAAAbABAAAAAHAAQAAAAcABAAAAAHAAQAAAAdABAAAAAHAAQAAAAdAAAAAAAHAAQAAAAdAAEAAAAHAAQAAAAdAAIAAAAHAAQAAAAdAAMAAAAHAAQAAAAdAAQAAAAHAAQAAAAdAAUAAAAHAAQAAAAdAAYAAAAHAAQAAAAdAAcAAAAHAAQAAAAdAAgAAAAHAAQAAAAdAAkAAAAHAAQAAAAdAAoAAAAHAAQAAAAdAAsAAAAHAAQAAAAdAAwAAAAHAAQAAAAdAA0AAAAHAAQAAAAdAA4AAAAHAAQAAAAdAA8AAAAHAAQAAAABAAAAAAAHAAQAAAACAAAAAAAHAAQAAAADAAAAAAAHAAQAAAAEAAAAAAAHAAQAAAAFAAAAAAAHAAQAAAAGAAAAAAAHAAQAAAAHAAAAAAAHAAQAAAAIAAAAAAAHAAQAAAAJAAAAAAAHAAQAAAAKAAAAAAAHAAQAAAALAAAAAAAHAAQAAAAMAAAAAAAHAAQAAAANAAAAAAAHAAQAAAAOAAAAAAAHAAQAAAAPAAAAAAAHAAQAAAAQAAAAAAAHAAQAAAARAAAAAAAHAAQAAAASAAAAAAAHAAQAAAATAAAAAAAHAAQAAAAUAAAAAAAHAAQAAAAVAAAAAAAHAAQAAAAWAAAAAAAHAAQAAAAXAAAAAAAHAAQAAAAYAAAAAAAHAAQAAAAZAAAAAAAHAAQAAAAaAAAAAAAHAAQAAAAbAAAAAAAHAAQAAAAcAAAAAAAHAAQAAAASABAAAAAHAAQAAAARABAAAAAHAAQAAAA=")
+[node name="walls" parent="." unique_id=704517355 instance=ExtResource("3_abdys")]
+position = Vector2(-2, 0)
+tile_map_data = PackedByteArray("AAAAAAAAAAAHAAQAAAAAAAEAAAAHAAQAAAAAAAIAAAAHAAQAAAAAAAMAAAAHAAQAAAAAAAQAAAAHAAQAAAAAAAUAAAAHAAQAAAAAAAYAAAAHAAQAAAAAAAcAAAAHAAQAAAAAAAgAAAAHAAQAAAAAAAkAAAAHAAQAAAAAAAoAAAAHAAQAAAAAAAsAAAAHAAQAAAAAAAwAAAAHAAQAAAAAAA0AAAAHAAQAAAAAAA4AAAAHAAQAAAAAAA8AAAAHAAQAAAAAABAAAAAHAAQAAAABABAAAAAHAAQAAAACABAAAAAHAAQAAAADABAAAAAHAAQAAAAEABAAAAAHAAQAAAAFABAAAAAHAAQAAAAGABAAAAAHAAQAAAAHABAAAAAHAAQAAAAIABAAAAAHAAQAAAAJABAAAAAHAAQAAAAKABAAAAAHAAQAAAALABAAAAAHAAQAAAAMABAAAAAHAAQAAAANABAAAAAHAAQAAAAOABAAAAAHAAQAAAAQABAAAAAHAAQAAAATABAAAAAHAAQAAAAUABAAAAAHAAQAAAAVABAAAAAHAAQAAAAWABAAAAAHAAQAAAAXABAAAAAHAAQAAAAYABAAAAAHAAQAAAAZABAAAAAHAAQAAAAaABAAAAAHAAQAAAAbABAAAAAHAAQAAAAcABAAAAAHAAQAAAAdABAAAAAHAAQAAAAdAAAAAAAHAAQAAAAdAAEAAAAHAAQAAAAdAAIAAAAHAAQAAAAdAAMAAAAHAAQAAAAdAAQAAAAHAAQAAAAdAAUAAAAHAAQAAAAdAAYAAAAHAAQAAAAdAAcAAAAHAAQAAAAdAAgAAAAHAAQAAAAdAAkAAAAHAAQAAAAdAAoAAAAHAAQAAAAdAAsAAAAHAAQAAAAdAAwAAAAHAAQAAAAdAA0AAAAHAAQAAAAdAA4AAAAHAAQAAAAdAA8AAAAHAAQAAAABAAAAAAAHAAQAAAACAAAAAAAHAAQAAAADAAAAAAAHAAQAAAAEAAAAAAAHAAQAAAAFAAAAAAAHAAQAAAAGAAAAAAAHAAQAAAAHAAAAAAAHAAQAAAAIAAAAAAAHAAQAAAAJAAAAAAAHAAQAAAAKAAAAAAAHAAQAAAALAAAAAAAHAAQAAAAMAAAAAAAHAAQAAAANAAAAAAAHAAQAAAAOAAAAAAAHAAQAAAAQAAAAAAAHAAQAAAARAAAAAAAHAAQAAAASAAAAAAAHAAQAAAATAAAAAAAHAAQAAAAUAAAAAAAHAAQAAAAVAAAAAAAHAAQAAAAWAAAAAAAHAAQAAAAXAAAAAAAHAAQAAAAYAAAAAAAHAAQAAAAZAAAAAAAHAAQAAAAaAAAAAAAHAAQAAAAbAAAAAAAHAAQAAAAcAAAAAAAHAAQAAAASABAAAAAHAAQAAAARABAAAAAHAAQAAAA=")
 tile_set = SubResource("TileSet_h7xga")
 
-[node name="CharacterBody2D" parent="." unique_id=1257237480 instance=ExtResource("4_pxqg0")]
-position = Vector2(289, 165)
+[node name="CharacterBody2D" parent="." unique_id=1257237480 instance=ExtResource("4_mtqvw")]
+position = Vector2(89, 86)
 
-[editable path="door_right"]
+[editable path="Door_Bottom"]
+[editable path="Door_Top"]
