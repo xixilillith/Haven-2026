@@ -46,12 +46,12 @@ func dash(direction_x, direction_y) -> void:
 	if not dashing:
 		dashing = true
 		if direction_x:
-			velocity.x = direction_x * (SPEED * 6)
+			velocity.x = direction_x * (SPEED * 3)
 		if direction_y:
-			velocity.y = direction_y * (SPEED * 6)
-		await get_tree().create_timer(0.1).timeout
+			velocity.y = direction_y * (SPEED * 3)
+		await get_tree().create_timer(0.2).timeout
 		dashing = false
 		dashing_endlag = true
-		await get_tree().create_timer(0.1).timeout
+		await get_tree().create_timer(0.2).timeout
 		dashing_endlag = false
 			
