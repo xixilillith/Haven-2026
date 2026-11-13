@@ -293,6 +293,9 @@ position = Vector2(0, 1)
 [node name="Spawn" parent="Door_Top" index="1" unique_id=229343840]
 position = Vector2(-2, 18)
 
+[node name="Start" parent="Door_Top" index="2" unique_id=351780913]
+position = Vector2(0, -14)
+
 [node name="Door_Bottom" parent="." unique_id=2022524789 instance=ExtResource("2_puwgn")]
 position = Vector2(248, 8)
 target_room = "uid://bn21k1f2m3wtj"
@@ -302,10 +305,13 @@ target_door_name = "Door_Top"
 position = Vector2(0, 255)
 
 [node name="Spawn" parent="Door_Bottom" index="1" unique_id=229343840]
-position = Vector2(0, 236)
+position = Vector2(0, 237)
+
+[node name="Start" parent="Door_Bottom" index="2" unique_id=351780913]
+position = Vector2(1, 269)
 
 [node name="CharacterBody2D" parent="." unique_id=1257237480 instance=ExtResource("3_p2uj6")]
-position = Vector2(132, 97)
+position = Vector2(176, 84)
 
 [connection signal="body_entered" from="Door_Top" to="Door_Top" method="_on_body_entered"]
 
