@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b1mmupympr80v" path="res://Room_Scenes/Tileset/full tilemap.png" id="1_2w4ou"]
 [ext_resource type="PackedScene" uid="uid://dthkdqfky58a5" path="res://Room_Scenes/Room_Assets/Door.tscn" id="2_efext"]
+[ext_resource type="PackedScene" uid="uid://ccrci862yt4h" path="res://Entities/Player/player.tscn" id="3_b87dh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k7ty0"]
 texture = ExtResource("1_2w4ou")
@@ -283,5 +284,8 @@ position = Vector2(0, 1)
 
 [node name="Spawn" parent="left_door" index="1" unique_id=229343840]
 position = Vector2(0, 9)
+
+[node name="CharacterBody2D" parent="." unique_id=1257237480 instance=ExtResource("3_b87dh")]
+position = Vector2(248, 38)
 
 [editable path="left_door"]
