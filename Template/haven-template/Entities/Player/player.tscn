@@ -7,6 +7,7 @@
 size = Vector2(16, 16)
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1257237480]
+top_level = true
 motion_mode = 1
 script = ExtResource("1_3uyv8")
 

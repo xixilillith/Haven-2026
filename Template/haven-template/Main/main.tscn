@@ -1,27 +1,15 @@
 [gd_scene format=3 uid="uid://bqiut6dhclp7w"]
 
 [ext_resource type="PackedScene" uid="uid://ccrci862yt4h" path="res://Entities/Player/player.tscn" id="1_yh5la"]
-[ext_resource type="Texture2D" uid="uid://p7d5gu1sro8j" path="res://icon.svg" id="2_2w1kt"]
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_juppl"]
-normal = Vector2(-1.08705976e-07, -1)
-distance = 62.915253
+[ext_resource type="PackedScene" uid="uid://dfy4fq6wjnhga" path="res://Rooms/Room_Scenes/Infinite_Loop_Test_For_Doors/Room_1.tscn" id="2_2w1kt"]
 
 [node name="Node2D" type="Node2D" unique_id=2117386656]
 
+[node name="room1" parent="." unique_id=1778822521 instance=ExtResource("2_2w1kt")]
+position = Vector2(-240, -135)
+
 [node name="CharacterBody2D" parent="." unique_id=1257237480 instance=ExtResource("1_yh5la")]
+position = Vector2(-34, -58)
+collision_mask = 7
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1984032287]
-position_smoothing_enabled = true
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1586531601]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=655618323]
-position = Vector2(1.0002441, 181)
-scale = Vector2(20.5, 0.921875)
-shape = SubResource("WorldBoundaryShape2D_juppl")
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=584043209]
-position = Vector2(1.0002441, 181)
-scale = Vector2(20.5, 0.921875)
-texture = ExtResource("2_2w1kt")
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1181188936]
