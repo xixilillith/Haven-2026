@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://ctwu35tjjea3"]
+[gd_scene format=4 uid="uid://bd5jdfvhcrilv"]
 
 [ext_resource type="Texture2D" uid="uid://b1mmupympr80v" path="res://Rooms/Room_Assets/Art/full tilemap.png" id="1_d1470"]
 [ext_resource type="PackedScene" uid="uid://mcpy6npthod1" path="res://Rooms/Room_Assets/Walls.tscn" id="2_7kdby"]

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://nrr3ponhmbr"]
+
+[ext_resource type="Script" uid="uid://c6ybbyeg2snhl" path="res://Rooms/Room_Scenes/Infinite_Loop_Test_For_Doors/dungeon.gd" id="1_gxruh"]
+[ext_resource type="PackedScene" uid="uid://ccrci862yt4h" path="res://Entities/Player/player.tscn" id="2_dvln8"]
+
+[node name="Dungeon" type="Node2D" unique_id=436341973]
+script = ExtResource("1_gxruh")
+
+[node name="CharacterBody2D" parent="." unique_id=1257237480 instance=ExtResource("2_dvln8")]

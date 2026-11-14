@@ -1,5 +1,5 @@
 extends Node
-
+const PLAYER_SCENE := preload("res://Entities/Player/player.tscn")
 #allows it to autoload
 const DIRS := {
 	#assigns direction to grid offsets
@@ -127,11 +127,48 @@ func start_run() -> void:
 	generate_dungeon(6, 2)
 	current_coords = Vector2i.ZERO
 	entry_direction = ""
-	get_tree().change_scene_to_file.call_deferred(dungeon[current_coords]["scene"])
+	_load_room(dungeon[current_coords]["scene"])
 func move_through_door(exit_direction: String) -> void:
 	if not dungeon.has(current_coords):
 		return
 	current_coords += DIRS[exit_direction]
 	entry_direction = OPPOSITE[exit_direction]
-	get_tree().change_scene_to_file.call_deferred(dungeon[current_coords]["scene"])
+	_load_room(dungeon[current_coords]["scene"])
+func _load_room(scene_path: String) -> void:
+	get_tree().change_scene_to_file.call_deferred(scene_path)
+	# Wait for the deferred scene swap to finish loading the new room
+	await get_tree().process_frame
+	await get_tree().process_frame
+	_spawn_and_position_player()
+func _spawn_and_position_player() -> void:
+	var room := get_tree().current_scene
+	if room == null:
+		return
+
+	# Reuse an existing CharacterBody2D if the room already has one, otherwise spawn it
+	var player: CharacterBody2D = null
+	for child in room.get_children():
+		if child is CharacterBody2D:
+			player = child
+			break
+
+	if player == null:
+		player = PLAYER_SCENE.instantiate()
+		room.add_child(player)
+
+	# Move player to the arriving door's Spawn marker, or the center of the starting room
+	if entry_direction != "":
+		for child in room.get_children():
+			if "door_direction" in child and child.door_direction == entry_direction:
+				var spawn := child.get_node_or_null("Spawn")
+				if spawn:
+					player.global_position = spawn.global_position
+				break
+		entry_direction = ""
+	else:
+		var start_marker := room.get_node_or_null("PlayerStart")
+		if start_marker:
+			player.global_position = start_marker.global_position
+		else:
+			player.global_position = Vector2(224, 136)
 var target_door_name: String = "" 

@@ -1,9 +1,10 @@
 extends Area2D
 @export var target_room: PackedScene
 @export var target_door_name: String
-@onready var tween = get_tree().create_tween()
+var tween = get_tree().create_tween()
 @onready var marker: Marker2D = $Spawn
 func _ready() -> void:
+	var tween = get_tree().create_tween()
 	body_entered.connect(_on_body_entered)
 	var expected := GameManager.target_door_name.strip_edges()
 	if expected != "":
